@@ -1,10 +1,11 @@
 const inputEl = document.querySelector('#validation-input');
 inputEl.addEventListener('blur', () => {
-const minLength = inputEl.dataset.length;
+const validLength = parseInt(inputEl.dataset.length);
 
-    if (inputEl.value.length >= minLength){
+inputEl.classList.remove("invalid");
+
+    if (inputEl.value.length === validLength){
         inputEl.classList.add("valid");
-        inputEl.classList.remove("invalid");
     } else {
         inputEl.classList.add("invalid");
         inputEl.classList.remove("valid");
